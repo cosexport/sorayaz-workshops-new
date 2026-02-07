@@ -266,42 +266,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Galerie
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez les créations et les moments partagés lors de nos ateliers.
-            </p>
-          </div>
+     {/* Gallery Section */}
+<section id="gallery" className="py-16 md:py-24 bg-secondary">
+  <div className="container">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+        Galerie
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Découvrez les créations et les moments partagés lors de nos ateliers.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Gallery items - will be populated from /public/gallery */}
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card"
-              >
-                <img
-                  src={`/images/gallery-placeholder.jpg`}
-                  alt={`Galerie - Image ${item}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-6">
-              Vous pouvez ajouter vos propres images en plaçant des fichiers dans le dossier <code className="bg-card px-2 py-1 rounded">/public/gallery</code>
-            </p>
-          </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        "gallery-1.jpg",
+        "gallery-2.jpg",
+        "gallery-3.jpg",
+        "gallery-4.jpg",
+        "gallery-5.jpg",
+        "gallery-6.jpg",
+      ].map((img, index) => (
+        <div
+          key={index}
+          className="aspect-square rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card"
+        >
+          <img
+            src={`/images/${img}`}
+            alt={`Galerie - Image ${index + 1}`}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-accent text-white">
