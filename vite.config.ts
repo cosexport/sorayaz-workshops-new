@@ -6,11 +6,7 @@ import path from "node:path";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  // Le frontend est dans /client
   root: path.resolve(__dirname, "client"),
-
-  // ✅ DOSSIER PUBLIC CORRECT
-  publicDir: "public",
 
   resolve: {
     alias: {
@@ -20,14 +16,9 @@ export default defineConfig({
   },
 
   build: {
-    // Sortie compatible Vercel
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true
   },
 
-  server: {
-    host: true,
-    port: 3000
-  }
+  base: "/"
 });
-
